@@ -24,4 +24,23 @@ export type IFetchCache =
  *? export const maxDuration = 5
  */
 
+//* opengrapg-image.png - image whne link is shared
+// sitemap.tsx - SEO
 
+//! favicon | .ico | locations = app/
+// <link rel="icon" href="/favicon.ico" sizes="any" />
+
+
+// icon | .ico, .jpg, .jpeg, .png, .svg | locations = app/**/*
+// <link rel="icon"
+//       href="/icon?<generated>"
+//       type="image/<generated>"
+//       sizes="<generated>"
+// />
+
+// apple-icon | .jpg, .jpeg, .png | locations = app/**/*
+// <link rel="apple-touch-icon"
+//       href="/apple-icon?<generated>"
+//       type="image/<generated>"
+//       sizes="<generated>"
+// />

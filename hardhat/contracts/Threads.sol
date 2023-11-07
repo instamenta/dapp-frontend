@@ -222,11 +222,7 @@ contract Threads is Ownable {
         string memory _targetId,
         string memory _name,
         string memory _content
-    ) public payable requireMinEth threadShouldExist(_targetId) {
-        require(
-            bytes(threads[_targetId].id).length >= 0,
-            "Thread already exists"
-        );
+    ) public payable requireMinEth threadShouldNotExist(_targetId) {
 
         threads[_targetId] = Thread({
             id: _targetId,

@@ -4,5 +4,8 @@
     "next/core-web-vitals",
     "next",
     "prettier"
-  ]
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": 0
+  }
 }
