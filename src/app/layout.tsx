@@ -2,9 +2,9 @@ import {Inter} from 'next/font/google';
 import type {Metadata} from 'next';
 import React from "react";
 import './globals.css';
-import Header from "@/components/navigation/Header";
-import Sidebar from "@/components/navigation/Sidebar";
 import Provider from "@/app/provider";
+import Navbar from "@/components/navigation";
+import Footer from '@/components/static/Footer'
 
 const inter = Inter({subsets: ['latin']});
 
@@ -19,20 +19,14 @@ const RootLayout: React.FC<LayoutProps> = ({children}) => {
     return (
         <html lang="en">
         <body className={inter.className}>
-        <div className="h-screen w-full bg-white relative flex overflow-hidden">
-            <Provider>
-                <Sidebar/>
+        <Provider>
+            <Navbar/>
+            <main className="min-w-full min-h-screen bg-indigo-900">
+                {children}
+            </main>
+        </Provider>
 
-                <div className="w-full h-full flex flex-col justify-between">
-                    <Header/>
-                    <main className="max-w-full h-full flex relative overflow-y-hidden">
-                        {children}
-                    </main>
-                </div>
-            </Provider>
-
-        </div>
-
+        <Footer/>
         </body>
         </html>
     );
