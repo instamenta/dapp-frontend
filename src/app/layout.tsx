@@ -21,7 +21,7 @@ const RootLayout: React.FC<LayoutProps> = ({children}) => {
         <body className={inter.className}>
         <Provider>
             <Navbar/>
-            <main className="min-w-full min-h-screen bg-indigo-900">
+            <main className="min-w-full min-h-screen bg-black">
                 {children}
             </main>
         </Provider>
