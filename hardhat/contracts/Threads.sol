@@ -13,6 +13,8 @@ contract Threads is Ownable {
         string id;
         string name;
         string content;
+        string description;
+        string image;
         uint256 balance;
         address creator;
         address[] likes;
@@ -42,8 +44,6 @@ contract Threads is Ownable {
     // Store ids in order to get structs paginated
     string[] public threadIds;
     address[] public userAddresses;
-
-    constructor () Ownable(msg.sender) {}
 
     event ThreadEvent(
         address indexed _user,
@@ -221,7 +221,9 @@ contract Threads is Ownable {
     function createThread(
         string memory _targetId,
         string memory _name,
-        string memory _content
+        string memory _content,
+        string memory _description,
+        string memory _image
     ) public payable requireMinEth threadShouldNotExist(_targetId) {
 
         threads[_targetId] = Thread({
@@ -230,6 +232,8 @@ contract Threads is Ownable {
             balance: msg.value,
             creator: msg.sender,
             content: _content,
+            description: _description,
+            image: _image,
             likes: new address[](0),
             dislikes: new address[](0),
             commentsIds: new string[](0)
